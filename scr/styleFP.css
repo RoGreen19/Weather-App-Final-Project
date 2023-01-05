@@ -49,5 +49,11 @@ body {
   font-size: 15px;
 }
 
-form {
+.search-bar {
+  position: relative;
+  top: -92px;
+  left: 218px;
+  width: 125px;
+  height: 22px;
+  font-size: 14px;
 }
