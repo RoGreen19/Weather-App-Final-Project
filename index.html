@@ -15,14 +15,26 @@
   </head>
   <body>
     <div class="container">
-      <h3 id="city-name">Kyiv</h3>
-      <h4 id="current-date">05/12</h4>
-      <h5 id="current-time">12:01</h5>
-      <form action="">
-        <input type="text" placeholder="Search city" />
-        <button>Search</button>
-      </form>
-      <h1 id="day-temperasture">-12°</h1>
+      <div class="card text-bg-dark">
+        <img
+          src="scr/20221014-Barnimages-001.jpg"
+          class="card-img"
+          alt="Wearher"
+        />
+        <div class="card-img-overlay">
+          <h3 id="city-name">Kyiv</h3>
+          <h4 id="current-date">05/12</h4>
+          <h5 id="current-time">12:01</h5>
+          <form action="">
+            <input type="search" placeholder="Search city" />
+            <button>Search</button>
+          </form>
+          <h1 id="day-temperasture">-12°</h1>
+          <h6 id="current-forecast">Cloudy</h6>
+          <h6 id="humidity">Humidity:10%</h6>
+          <h6 id="wind">Wind: 13 mph</h6>
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
