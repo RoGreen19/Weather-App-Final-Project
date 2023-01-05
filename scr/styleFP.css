@@ -1,0 +1,30 @@
+body {
+  background: linear-gradient(
+    to right bottom,
+    #076585,
+    #6387a5,
+    #9dacc3,
+    #d1d4e1,
+    #ffffff
+  );
+}
+
+.container {
+  display: block;
+  margin: 77px;
+}
+
+.text-bg-dark {
+  margin: 0 auto;
+  width: 400px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 98%;
+}
+
+.card-img-overlay {
+  color: #000;
+}
