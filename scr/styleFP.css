@@ -23,7 +23,8 @@ body {
   bottom: 0;
   left: 0;
   opacity: 98%;
-  font-family: "Aboreto", cursive;
+  font-family: "Josefin Sans", sans-serif;
+  opacity: 88%;
 }
 
 .card-img-overlay {
@@ -121,6 +122,23 @@ body {
 .week-weather-icon {
   width: 31px;
   filter: drop-shadow(2px 2px 29px rgb(128, 123, 123));
+}
+
+.weekdate-one-name,
+.weekdate-one-temperature,
+.weekdate-two-name,
+.weekdate-two-temperature,
+.weekdate-three-name,
+.weekdate-three-temperature,
+.weekdate-four-name,
+.weekdate-four-temperature,
+.weekdate-five-name,
+.weekdate-five-temperature {
+  margin: 5px 2px;
+}
+
+.week-weather-icon {
+  margin: 5px;
 }
 
 .code-link {
