@@ -75,4 +75,17 @@ body {
   text-align: center;
   margin: 13px 0px 51px 5px;
 }
-.current-forecast .humidity .wind;
+#current-forecast {
+  font-style: italic;
+  margin: 2px 0px 20px;
+  font-size: 21px;
+}
+
+#humidity {
+  font-weight: bold;
+  font-size: 22px;
+}
+#wind {
+  font-weight: bold;
+  font-size: 22px;
+}
