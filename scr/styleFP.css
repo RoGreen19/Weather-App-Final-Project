@@ -88,4 +88,20 @@ body {
 #wind {
   font-weight: bold;
   font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.text-center {
+  margin: 0 auto;
+}
+
+.col {
+  color: #000;
+  border-radius: 59px;
+  background: rgb(255, 255, 255, 0.9);
+  box-shadow: rgb(0 0 0 / 15%) 0px 3px 3px 0px;
+  font-size: 11px;
+  line-height: 0.7;
+  padding: 12px;
+  margin: 2px;
 }
