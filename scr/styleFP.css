@@ -105,3 +105,8 @@ body {
   padding: 12px;
   margin: 2px;
 }
+
+.code-source {
+  text-align: center;
+  color: aquamarine;
+}
