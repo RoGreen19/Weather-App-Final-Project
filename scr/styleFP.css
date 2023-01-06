@@ -28,6 +28,7 @@ body {
 
 .card-img-overlay {
   color: #000;
+  margin: 10px;
 }
 
 #city-name {
@@ -53,7 +54,7 @@ body {
 .search-bar {
   position: relative;
   top: -92px;
-  left: 218px;
+  left: 209px;
   width: 125px;
   height: 22px;
   font-size: 14px;
@@ -62,15 +63,16 @@ body {
 .search-button {
   position: relative;
   top: -93px;
-  left: 212px;
+  left: 200px;
   width: 30px;
   height: 22px;
   border: none;
   background: none;
 }
 
-.day-temperasture {
+#day-temperasture {
   font-size: 97px;
   text-align: center;
+  margin: 13px 0px 51px 5px;
 }
 .current-forecast .humidity .wind;
