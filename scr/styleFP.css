@@ -1,6 +1,6 @@
 body {
-  background: linear-gradient(
-    to right bottom,
+  background-image: linear-gradient(
+    to top,
     #076585,
     #6387a5,
     #9dacc3,
@@ -35,6 +35,7 @@ body {
   display: block;
   text-align: left;
   font-size: 40px;
+  position: relative;
 }
 
 #current-date {
@@ -67,3 +68,9 @@ body {
   border: none;
   background: none;
 }
+
+.day-temperasture {
+  font-size: 97px;
+  text-align: center;
+}
+.current-forecast .humidity .wind;
