@@ -52,7 +52,7 @@ body {
   font-size: 15px;
 }
 
-.search-bar {
+#search-new-city {
   position: relative;
   top: -92px;
   left: 209px;
