@@ -6,39 +6,42 @@ function changeCityName(event) {
   heading.innerHTML = `${newCityName.value}`;
 
   findNewCityTemperature(newCityName.value);
+  changeDateTime();
 }
-
-//time and date
-let today = new Date();
-
-let showDate = document.querySelector("#current-date");
-
-let date = today.getDate();
-if (date < 10) {
-  date = `${date}`;
-}
-let month = today.getMonth();
-if (month < 10) {
-  month = `${month}`;
-}
-
-showDate.innerHTML = `${date}/${month + 1}`;
-
-let showTime = document.querySelector("#current-time");
-
-let hours = today.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = today.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-showTime.innerHTML = `${hours}:${minutes}`;
 
 let formForCity = document.querySelector("#city-input");
 formForCity.addEventListener("submit", changeCityName);
+
+//time and date
+function changeDateTime() {
+  let today = new Date();
+
+  let showDate = document.querySelector("#current-date");
+
+  let date = today.getDate();
+  if (date < 10) {
+    date = `${date}`;
+  }
+  let month = today.getMonth();
+  if (month < 10) {
+    month = `${month}`;
+  }
+
+  showDate.innerHTML = `${date}/${month + 1}`;
+
+  let showTime = document.querySelector("#current-time");
+
+  let hours = today.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = today.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  showTime.innerHTML = `${hours}:${minutes}`;
+}
 
 //find weather for searching city
 function findNewCityTemperature(cityName) {
