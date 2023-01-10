@@ -71,7 +71,7 @@ body {
   background: none;
 }
 
-.weather-img {
+.weather-img-current {
   position: absolute;
   z-index: 0;
   width: 245px;

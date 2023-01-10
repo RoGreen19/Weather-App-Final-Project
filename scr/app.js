@@ -7,6 +7,7 @@ function changeCityName(event) {
 
   findNewCityTemperature(newCityName.value);
   changeDateTime();
+  changeWeatherIcon();
 }
 
 let formForCity = document.querySelector("#city-input");
@@ -71,4 +72,15 @@ function findNewCityTemperature(cityName) {
   axios
     .get(`${apiUrl}&q=${cityName}&appid=${apiKey}`)
     .then(showNewCityTemperature);
+}
+
+function changeWeatherIcon() {
+  let weatherIcon = responce.data.weather[0].id;
+  let newCityWeatherIcon = document.querySelector(".weather-img-current");
+
+  if (weatherIcon == "801") {
+    newCityWeatherIcon.innerHTML = "<img src=`800.png`/>";
+  } else {
+    newCityWeatherIcon.innerHTML = "<img src=`600-622.png`/>";
+  }
 }
