@@ -4,10 +4,8 @@ function changeCityName(event) {
   let newCityName = document.querySelector("#search-new-city");
   let heading = document.querySelector("#city-name");
   heading.innerHTML = `${newCityName.value}`;
-
-  findNewCityTemperature(newCityName.value);
   changeDateTime();
-  changeWeatherIcon();
+  findNewCityTemperature(newCityName.value);
 }
 
 let formForCity = document.querySelector("#city-input");
@@ -47,40 +45,68 @@ function changeDateTime() {
 //find weather for searching city
 function findNewCityTemperature(cityName) {
   let apiKey = "670e88793852b42366cd8790c3445dbc";
-  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric";
-
-  function showNewCityTemperature(responce) {
-    //change weather
-    let weather = responce.data.weather[0].description;
-    let weatherDescription = weather[0].toUpperCase() + weather.slice(1);
-    let weathertureInCurrentCity = document.querySelector("#current-forecast");
-    weathertureInCurrentCity.innerHTML = `${weatherDescription}`;
-    //change temperature
-    let temperature = Math.round(responce.data.main.temp);
-    let temperatureInCurrentCity = document.querySelector("#day-temperasture");
-    temperatureInCurrentCity.innerHTML = `${temperature}°`;
-    //change Humidity
-    let humidity = responce.data.main.humidity;
-    let humidityInCurrentCity = document.querySelector("#humidity");
-    humidityInCurrentCity.innerHTML = `Humidity: ${humidity} %`;
-    //change wind
-    let wind = responce.data.wind.speed;
-    let windInCurrentCity = document.querySelector("#wind");
-    windInCurrentCity.innerHTML = `Wind: ${wind} km/h`;
-  }
-
-  axios
-    .get(`${apiUrl}&q=${cityName}&appid=${apiKey}`)
-    .then(showNewCityTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showNewCityTemperature);
 }
 
-function changeWeatherIcon() {
+function showNewCityTemperature(responce) {
+  console.log(responce.data);
+  //change weather
+  let weather = responce.data.weather[0].description;
+  let weatherDescription = weather[0].toUpperCase() + weather.slice(1);
+  let weathertureInCurrentCity = document.querySelector("#current-forecast");
+  weathertureInCurrentCity.innerHTML = `${weatherDescription}`;
+  //change temperature
+  let temperature = Math.round(responce.data.main.temp);
+  let temperatureInCurrentCity = document.querySelector("#day-temperasture");
+  temperatureInCurrentCity.innerHTML = `${temperature}°`;
+  //change Humidity
+  let humidity = responce.data.main.humidity;
+  let humidityInCurrentCity = document.querySelector("#humidity");
+  humidityInCurrentCity.innerHTML = `Humidity: ${humidity} %`;
+  //change wind
+  let wind = responce.data.wind.speed;
+  let windInCurrentCity = document.querySelector("#wind");
+  windInCurrentCity.innerHTML = `Wind: ${wind} km/h`;
+  changeWeatherIcon(responce);
+}
+
+function changeWeatherIcon(responce) {
   let weatherIcon = responce.data.weather[0].id;
   let newCityWeatherIcon = document.querySelector(".weather-img-current");
-
-  if (weatherIcon == "801") {
-    newCityWeatherIcon.innerHTML = "<img src=`800.png`/>";
+  console.log(weatherIcon);
+  if (weatherIcon === "801") {
+    newCityWeatherIcon.setAttribute("src", "scr/800.png");
   } else {
-    newCityWeatherIcon.innerHTML = "<img src=`600-622.png`/>";
+    newCityWeatherIcon.setAttribute("src", "scr/600-622.png");
   }
+}
+
+// 5 day forecast
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecast = response.data.daily;
+
+  //let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"] (add "Sat", "Sun");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">
+              <h6 class="weekdate-one">06/12</h6>
+              <br />
+              <p class="weekdate-one-name">${forecastDay.dt}</p>
+              <br />
+              <img src="scr/300-321_511-531.png" class="week-weather-icon"/>
+              <br/>
+              <p class="weekdate-one-temperature"><span class="max-temperature">${forecastDay.temp.max}</span><span class="min-temperature">/${forecastDay.temp.min}</span></p>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
