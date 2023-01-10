@@ -136,6 +136,11 @@ body {
 .weekdate-five-name,
 .weekdate-five-temperature {
   margin: 5px 2px;
+  text-align: center;
+}
+
+.max-temperature {
+  font-weight: bold;
 }
 
 .week-weather-icon {
