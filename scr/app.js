@@ -75,13 +75,23 @@ function changeWeatherIcon(responce) {
   let weatherIcon = responce.data.weather[0].id;
   let newCityWeatherIcon = document.querySelector(".weather-img-current");
   console.log(weatherIcon);
-  if (weatherIcon === "801") {
-    newCityWeatherIcon.setAttribute("src", "scr/800.png");
-  } else {
+  if (232 >= weatherIcon >= 200) {
+    newCityWeatherIcon.setAttribute("src", "scr/200-232.png");
+  } else if (321 >= weatherIcon >= 300 || 531 >= weatherIcon >= 511) {
+    newCityWeatherIcon.setAttribute("src", "scr/300-321_511-531.png");
+  } else if (504 >= weatherIcon >= 500) {
+    newCityWeatherIcon.setAttribute("src", "scr/500-504.png");
+  } else if (622 >= weatherIcon >= 600) {
     newCityWeatherIcon.setAttribute("src", "scr/600-622.png");
+  } else if (781 >= weatherIcon >= 701 || 804 >= weatherIcon >= 802) {
+    newCityWeatherIcon.setAttribute("src", "scr/701-781_802-804.png");
+  } else if (weatherIcon === 801) {
+    newCityWeatherIcon.setAttribute("src", "scr/801.png");
+  } else {
+    newCityWeatherIcon.setAttribute("src", "scr/800.png");
   }
+  console.log(responce.data.weather[0].id);
 }
-
 // 5 day forecast
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
