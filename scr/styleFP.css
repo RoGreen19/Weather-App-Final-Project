@@ -80,13 +80,13 @@ body {
   filter: drop-shadow(2px 2px 10px rgb(128, 123, 123));
 }
 #day-temperasture {
-  font-size: 101px;
+  font-size: 112px;
   text-align: center;
   margin: 13px 0px 51px 5px;
   position: relative;
-  left: 43px;
-  top: 45px;
-  text-shadow: rgb(0 0 0 / 75%) 0px 5px 15px;
+  left: 50px;
+  top: 48px;
+  text-shadow: rgb(0 0 0 / 82%) 0px 5px 15px;
 }
 
 #current-forecast {
@@ -95,14 +95,13 @@ body {
   font-size: 21px;
 }
 
-#humidity {
+#humidity,
+#wind {
   font-weight: bold;
   font-size: 22px;
 }
 #wind {
-  font-weight: bold;
-  font-size: 22px;
-  margin-bottom: 22px;
+  margin-bottom: 15px;
 }
 
 .text-center {
@@ -112,11 +111,11 @@ body {
 .col {
   color: #000;
   border-radius: 59px;
-  background: rgb(255, 255, 255, 0.9);
-  box-shadow: rgb(0 0 0 / 15%) 0px 3px 3px 0px;
-  font-size: 11px;
+  background: rgb(136 201 217 / 85%);
+  box-shadow: rgb(0 0 0 / 25%) 0px 3px 3px 0px;
+  font-size: 14px;
   line-height: 0.5;
-  padding: 10px;
+  padding: 21px 0px;
   margin: 2px;
 }
 
@@ -136,7 +135,7 @@ body {
 .weekdate-four-temperature,
 .weekdate-five-name,
 .weekdate-five-temperature {
-  margin: 5px 2px;
+  margin: 7px 2px;
 }
 
 .max-temperature {
