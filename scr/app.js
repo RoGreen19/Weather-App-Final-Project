@@ -105,29 +105,42 @@ function changeWeatherIcon(responce) {
   }
   console.log(responce.data.weather[0].id);
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
+
 // 5 day forecast
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecast = response.data.daily;
 
-  //let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"] (add "Sat", "Sun");
-
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col">
               <h6 class="weekdate-one">06/12</h6>
               <br />
-              <p class="weekdate-one-name">${forecastDay.dt}</p>
+              <p class="weekdate-one-name">${formatDay(forecastDay.dt)}</p>
               <br />
               <img src="scr/300-321_511-531.png" class="week-weather-icon"/>
               <br/>
-              <p class="weekdate-one-temperature"><span class="max-temperature">${forecastDay.temp.max}</span><span class="min-temperature">/${forecastDay.temp.min}</span></p>
+              <p class="weekdate-one-temperature"><span class="max-temperature">${Math.round(
+                forecastDay.temp.max
+              )}°</span><span class="min-temperature">/${Math.round(
+          forecastDay.temp.min
+        )}°</span></p>
             </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
