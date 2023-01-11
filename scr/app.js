@@ -44,9 +44,20 @@ function changeDateTime() {
 
 //find weather for searching city
 function findNewCityTemperature(cityName) {
-  let apiKey = "670e88793852b42366cd8790c3445dbc";
+  let apiKey = "cd173a006b0e51dac58c6d8064c94178";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(showNewCityTemperature);
+}
+
+// 5 day forecast API
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "cd173a006b0e51dac58c6d8064c94178";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showNewCityTemperature(responce) {
@@ -69,6 +80,8 @@ function showNewCityTemperature(responce) {
   let windInCurrentCity = document.querySelector("#wind");
   windInCurrentCity.innerHTML = `Wind: ${wind} km/h`;
   changeWeatherIcon(responce);
+
+  getForecast(responce.data.coord);
 }
 
 function changeWeatherIcon(responce) {
