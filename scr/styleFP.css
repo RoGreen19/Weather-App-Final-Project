@@ -123,6 +123,7 @@ body {
 .week-weather-icon {
   width: 31px;
   filter: drop-shadow(2px 2px 29px rgb(128, 123, 123));
+  margin: 5px;
 }
 
 .weekdate-one-name,
@@ -140,10 +141,6 @@ body {
 
 .max-temperature {
   font-weight: bold;
-}
-
-.week-weather-icon {
-  margin: 5px;
 }
 
 .code-link {

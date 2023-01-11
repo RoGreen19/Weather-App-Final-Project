@@ -127,11 +127,12 @@ function displayForecast(response) {
         forecastHTML +
         `
       <div class="col">
-              <h6 class="weekdate-one">06/12</h6>
-              <br />
+
               <p class="weekdate-one-name">${formatDay(forecastDay.dt)}</p>
               <br />
-              <img src="scr/300-321_511-531.png" class="week-weather-icon"/>
+              <img class="week-weather-icon" src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"/>
               <br/>
               <p class="weekdate-one-temperature"><span class="max-temperature">${Math.round(
                 forecastDay.temp.max
