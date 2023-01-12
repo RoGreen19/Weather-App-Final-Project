@@ -4,10 +4,10 @@ function changeCityName(event) {
   let newCityName = document.querySelector("#search-new-city");
   let heading = document.querySelector("#city-name");
   heading.innerHTML = `${newCityName.value}`;
-  changeDateTime();
   findNewCityTemperature(newCityName.value);
 }
 
+changeDateTime();
 findNewCityTemperature("Kyiv");
 
 let formForCity = document.querySelector("#city-input");
