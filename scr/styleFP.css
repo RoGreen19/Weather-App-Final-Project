@@ -54,7 +54,7 @@ body {
 
 #search-new-city {
   position: relative;
-  top: -92px;
+  top: -148px;
   left: 209px;
   width: 125px;
   height: 22px;
@@ -63,7 +63,7 @@ body {
 
 .search-button {
   position: relative;
-  top: -93px;
+  top: -148px;
   left: 200px;
   width: 30px;
   height: 22px;
@@ -74,9 +74,9 @@ body {
 .weather-img-current {
   position: absolute;
   z-index: 0;
-  width: 245px;
-  top: 82px;
-  right: 85px;
+  width: 263px;
+  top: 87px;
+  right: 31px;
   filter: drop-shadow(2px 2px 10px rgb(128, 123, 123));
 }
 #day-temperasture {
@@ -84,7 +84,7 @@ body {
   text-align: center;
   margin: 13px 0px 51px 5px;
   position: relative;
-  left: 50px;
+  left: 66px;
   top: 48px;
   text-shadow: rgb(0 0 0 / 76%) 0px 5px 15px;
 }
