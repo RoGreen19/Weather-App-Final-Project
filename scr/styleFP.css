@@ -86,7 +86,7 @@ body {
   position: relative;
   left: 50px;
   top: 48px;
-  text-shadow: rgb(0 0 0 / 82%) 0px 5px 15px;
+  text-shadow: rgb(0 0 0 / 76%) 0px 5px 15px;
 }
 
 #current-forecast {
@@ -109,9 +109,9 @@ body {
 }
 
 .col {
-  color: #000;
+  color: #fff;
   border-radius: 59px;
-  background: rgb(136 201 217 / 85%);
+  background: #000000d4;
   box-shadow: rgb(0 0 0 / 25%) 0px 3px 3px 0px;
   font-size: 14px;
   line-height: 0.5;
@@ -121,7 +121,7 @@ body {
 
 .week-weather-icon {
   width: 31px;
-  filter: drop-shadow(2px 2px 29px rgb(128, 123, 123));
+  filter: drop-shadow(0px 0px 2px #fff);
   margin: 5px;
 }
 
