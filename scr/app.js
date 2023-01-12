@@ -8,6 +8,8 @@ function changeCityName(event) {
   findNewCityTemperature(newCityName.value);
 }
 
+findNewCityTemperature("Kyiv");
+
 let formForCity = document.querySelector("#city-input");
 formForCity.addEventListener("submit", changeCityName);
 
